@@ -60,7 +60,7 @@ Implementação do algoritmo SIFT baseado no projeto [OpenSIFT][].
 O programa `/server/core/sift/src/search.c` é uma extensão do programa `match.c` para a busca reversa de imagem usando o método SIFT. Um exemplo de utilização do programa (dentro da máquina virtual):
 
     cd /vagrant/core/sift/bin/
-    search ../media/rainbow_template.jpg ../media/rainbow_foto.jpg
+    ./search ../media/rainbow_template.jpg ../media/rainbow_foto.jpg
 
 ### Roadmap ###
 
