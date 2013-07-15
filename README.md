@@ -11,7 +11,7 @@ O projeto é divido em subprojetos organizados na seguinte estrutura de diretór
 
 # Servidor #
 
-Para se ter um ambiente de desenvolvimento unificado, é utilizada uma máquina virtual com Ubuntu 12.04 LTS 64-bit e todas as dependências do projeto. Para isso é necessário instalar o [Virtualbox][] e [Vagrant][]. Em seguida executar o seguinte comando dentro do diretório `/server`:
+Para se ter um ambiente de desenvolvimento unificado, é utilizada uma máquina virtual com todas as dependências do projeto. Para isso é necessário instalar o [Virtualbox][] e [Vagrant][]. Em seguida executar o seguinte comando dentro do diretório `/server`:
 [Virtualbox]:https://www.virtualbox.org/
 [Vagrant]:http://www.vagrantup.com/
 
@@ -21,11 +21,19 @@ Para acessar o terminal desta máquina virtual é usado o comando:
 
     vagrant ssh
 
+O Vagrant está configurado em `/server/Vagrantfile` para lançar uma máquina virtual com 1 Gb de RAM, com sistema operacional Ubuntu 12.04 LTS 64-bit e redirecionar sua porta 8000 para a porta 8000 do sistema operacional anfitrião. O Vagrant também aciona os shell scripts responsáveis pelo provisionamento do servidor em `/server/provisioning:
+
+* opencv.sh: instala o OpenCV na versão 2.4.5
+* sift.sh: compila o programa `search` de `/server/core/sift`
+* django.sh: instala o framework Django, cria um environment isolado chamado `webenv` e roda o projeto `RA` na porta 8000
+
 ## Web ##
 
-Servidor em [Python][] usando framework [Django][].
+Servidor web em [Python][] usando framework [Django][].
 [Python]:http://www.python.org/
 [Django]:https://www.djangoproject.com/
+
+O projeto do servidor já foi criado com nome RA no diretório `/server/web/RA`.
 
 ### Roadmap ###
 
@@ -48,6 +56,11 @@ O desenvolvimento do servidor web seguirá o seguinte roadmap:
 
 Implementação do algoritmo SIFT baseado no projeto [OpenSIFT][].
 [OpenSIFT]:http://robwhess.github.io/opensift/
+
+O programa `/server/core/sift/src/search.c` é uma extensão do programa `match.c` para a busca reversa de imagem usando o método SIFT. Um exemplo de utilização do programa (dentro da máquina virtual):
+
+    cd /vagrant/core/sift/bin/
+    search ../media/rainbow_template.jpg ../media/rainbow_foto.jpg
 
 ### Roadmap ###
 
