@@ -117,5 +117,5 @@ O desenvolvimento dos aplicativos seguirá o seguinte roadmap:
 
 # Time #
 
-*Victor Morandini Stabile
-*André Goulart Nogueira
+* Victor Morandini Stabile
+* André Goulart Nogueira
