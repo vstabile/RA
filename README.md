@@ -1,4 +1,4 @@
-# Estrutura do projeto #
+﻿# Estrutura do projeto #
 
 O projeto é divido em subprojetos organizados na seguinte estrutura de diretórios:
 
@@ -114,3 +114,8 @@ O desenvolvimento dos aplicativos seguirá o seguinte roadmap:
     * Streaming do vídeo
 * Versão 0.9:
     * Extrair um SDK do aplicativo
+
+# Time #
+
+*Victor Morandini Stabile
+*André Goulart Nogueira
