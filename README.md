@@ -119,3 +119,4 @@ O desenvolvimento dos aplicativos seguirá o seguinte roadmap:
 
 * Victor Morandini Stabile
 * André Goulart Nogueira
+* Francisco Edvar da Cunha Filho
